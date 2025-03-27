@@ -1,0 +1,89 @@
+
+.cabecera{
+    text-align-last: center;
+}
+.cabecera h1{
+    font-size: 50px;
+}
+.juego{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.jugador1, .jugador2 {
+    width: 30%; 
+    text-align: center;
+    border: 1px solid black; 
+    padding: 5px;
+    border-radius: 10px;
+}
+.jugador1{
+    background-color: rgb(56, 56, 180);
+    align-items: center;
+    color:white;
+    font-family: fantasy;
+    font-size: 25px;
+}
+.jugador2{
+    background-color: rgb(190, 44, 44);
+    color:white;
+    font-family: fantasy;
+    font-size: 25px;
+}
+
+/*Estilos para la tabla de resultados*/
+.resultados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
+    height: 300px; 
+}
+
+.tablaR table {
+    border-collapse: collapse;
+    width: 100%; /* Ajusta el ancho de la tabla */
+    text-align: center;
+}
+
+.tablaR th, .tablaR td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
+#player1{
+    background-color: rgb(56, 56, 180);
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#player2{
+    background-color: rgb(190, 44, 44);
+    color: rgb(227, 247, 253);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#ronda1-p1, #ronda2-p1,#ronda3-p1{
+    background-color: rgb(81, 81, 228);
+    color: rgb(219, 244, 255);
+    font-family: fantasy;
+}
+
+#ronda1-p2, #ronda2-p2,#ronda3-p2{
+    background-color: rgb(248, 108, 108);
+    color: rgb(37, 22, 22);
+    font-family: fantasy;
+}
+
+
+
+/*Para el boton de reiniciar*/
+.reiniciar{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+#reinicio{
+    
+}
