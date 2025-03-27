@@ -33,6 +33,7 @@
 }
 
 /*Estilos para la tabla de resultados*/
+
 .resultados {
     display: flex;
     flex-direction: column;
@@ -43,7 +44,7 @@
 
 .tablaR table {
     border-collapse: collapse;
-    width: 100%; /* Ajusta el ancho de la tabla */
+    width: 100%; 
     text-align: center;
 }
 
@@ -51,7 +52,6 @@
     border: 1px solid black;
     padding: 10px;
 }
-
 
 #player1{
     background-color: rgb(56, 56, 180);
@@ -84,6 +84,20 @@
     right: 10px;
 }
 
-#reinicio{
-    
+.reinicio{
+    border: none; 
+    color: black; 
+    font-family:fantasy;
+    font-size: 20px;
+    padding: 14px 28px; 
+    cursor: pointer; 
+    border-radius: 5px;
+    background-color: white; 
+    border: 2px solid #c96842;
+}
+
+.reinicio:hover{
+    background-color: #c96842;
+    color: white;
+
 }
