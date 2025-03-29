@@ -154,4 +154,200 @@
 
 }
 
+/*Estilo para los dados*/
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Crea 2 columnas iguales */
+  gap: 50px; /* Espacio entre los dados */
+  justify-content: center; /* Centra las columnas */
+  align-items: center;
+  height: 100vh;
+}
+
+.columna {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+  perspective: 600px;
+  top: -150px;
+
+}
+
+.cube1, .cube2 {
+  transform: translateY(180px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.cube-face {
+  position: absolute; 
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  background: white;
+
+  border: black 1px solid;
+  border-radius: 5%;
+}
+
+.front {
+  transform: translateZ(100px);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+.inside {
+  display: grid;
+  grid-template-columns: repeat(3, 40px);
+  grid-template-rows: repeat(3, 40px);
+}
+
+.dot {
+  height: 35px;
+  width: 35px;
+  background-color: black;
+  border-radius: 50%;
+  justify-self: center;
+  align-self: center;
+}
+
+.front .inside .dot {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.back .inside .dot:nth-child(1) {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.back .inside .dot:nth-child(2) {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.back .inside .dot:nth-child(3) {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.back .inside .dot:nth-child(4) {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.back .inside .dot:nth-child(5) {
+  grid-row: 3;
+  grid-column: 2;
+}
+
+.back .inside .dot:nth-child(6) {
+  grid-row: 3;
+  grid-column: 3;
+}
+
+.left .inside .dot:nth-child(1) {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.left .inside .dot:nth-child(2) {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.left .inside .dot:nth-child(3) {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.right .inside .dot:nth-child(1) {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.right .inside .dot:nth-child(2) {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.right .inside .dot:nth-child(3) {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.right .inside .dot:nth-child(4) {
+  grid-row: 3;
+  grid-column: 3;
+}
+
+.top .inside .dot:nth-child(1) {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.top .inside .dot:nth-child(2) {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.top .inside .dot:nth-child(3) {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.top .inside .dot:nth-child(4) {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.top .inside .dot:nth-child(5) {
+  grid-row: 3;
+  grid-column: 3;
+}
+
+.bottom .inside .dot:nth-child(1) {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.bottom .inside .dot:nth-child(2) {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.base {
+  width: 300px; /* Ajusta el tamaño según el dado */
+  height: 30px; /* Grosor de la base */
+  background-color: #444; /* Color oscuro para que parezca suelo */
+  position: absolute;
+  left: 50%;
+  transform: translateY(240px) translateX(-50%);
+  border-radius: 10px; /* Bordes redondeados para un mejor efecto */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
 
