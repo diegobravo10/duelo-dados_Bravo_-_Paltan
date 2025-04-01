@@ -120,11 +120,14 @@ if(repeticion <= 6){
                         totalp2.innerHTML = player2;
                     }
                     if(turno == 1){
-                        turno1.innerHTML = ''
+                        turno1.innerHTML = ' '
                         turno2.innerHTML = 'Tu Turno'
                     }else{
-                        turno2.innerHTML = ''
-                        turno1.innerHTML = 'Tu Turno'
+                        turno2.innerHTML = ' '
+                        if(repeticion != 6){
+                            turno1.innerHTML = 'Tu Turno'
+                        }
+                        
 
                     }
 
@@ -147,7 +150,7 @@ function deshabilitarGiro(){
     giro.disabled = true;
     setTimeout(() => {
      giro.disabled = false;
-    }, 1000);
+    }, 1300);
  }
  
  
