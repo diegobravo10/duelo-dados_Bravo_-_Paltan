@@ -4,12 +4,30 @@ let repeticion = 0;
 let player1 = 0;
 let player2 = 0;
 
+let sonido = new Audio("assest/Audio/dado.mp3")
+
+let td1p1 = document.getElementById('ronda1-p1');
+let td1p2 = document.getElementById('ronda1-p2');
+let td2p1 = document.getElementById('ronda2-p1');
+let td2p2 = document.getElementById('ronda2-p2');
+let td3p1 = document.getElementById('ronda3-p1');
+let td3p2 = document.getElementById('ronda3-p2');
+
+
+document.addEventListener("keydown", function(event) {
+    if (event.code === "Space") {
+        event.preventDefault(); 
+        document.querySelector('.btn').click(); 
+    }
+});
 
 document.querySelector('.btn').addEventListener('click', () => {
     repeticion = 1 + repeticion;
     turno = 1- turno;
     let cube;
 if(repeticion <= 6){
+    deshabilitarGiro();
+    sonido.play();
     const randomValue = Math.floor((Math.random() * 6) + 1);
 
     if (turno == 1){
@@ -59,23 +77,47 @@ if(repeticion <= 6){
 
                     switch (randomValue) {
                         case 1:
-                            cube.style.transform = `translateY(180px) rotateX(2160deg) rotateY(2160deg) rotateZ(2160deg)`;
+                            cube.style.transform = `translateY(180px) rotateX(3600deg) rotateY(3600deg) rotateZ(3600deg)`;
                             break;
                         case 2:
-                            cube.style.transform = `translateY(180px) rotateX(2520deg) rotateY(2160deg) rotateZ(2160deg)`;
+                            cube.style.transform = `translateY(180px) rotateX(4410deg) rotateY(3600deg) rotateZ(3600deg)`;
                             break;
                         case 3:
-                            cube.style.transform = `translateY(180px) rotateX(2160deg) rotateY(2520deg) rotateZ(2160deg)`;
+                            cube.style.transform = `translateY(180px) rotateX(3600deg) rotateY(4410deg) rotateZ(3600deg)`;
                             break;
                         case 4:
-                            cube.style.transform = `translateY(180px) rotateX(2160deg) rotateY(1350deg) rotateZ(2160deg)`;
+                            cube.style.transform = `translateY(180px) rotateX(3600deg) rotateY(2430deg) rotateZ(3600deg)`;
                             break;
                         case 5:
-                            cube.style.transform = `translateY(180px) rotateX(1350deg) rotateY(2160deg) rotateZ(2160deg)`;
+                            cube.style.transform = `translateY(180px) rotateX(2430deg) rotateY(2430deg) rotateZ(3600deg)`;
                             break;
                         case 6:
-                            cube.style.transform = `translateY(180px) rotateX(2160deg) rotateY(990deg) rotateZ(2160deg)`;
+                            cube.style.transform = `translateY(180px) rotateX(3600deg) rotateY(1980deg) rotateZ(3600deg)`;
                             break;
+                    }
+
+                    if(repeticion == 1){
+                        td1p1.innerHTML= randomValue;
+                    }else if(repeticion == 2){ 
+                        td1p2.innerHTML= randomValue;
+                    }else if(repeticion == 3){
+                        td2p1.innerHTML= randomValue;
+                    }else if(repeticion == 4){
+                        td2p2.innerHTML= randomValue;
+                    }else if((repeticion == 5)){
+                        td3p1.innerHTML= randomValue;
+                    }else{
+                        td3p2.innerHTML= randomValue;
+                        console.log('Partida terminada');
+                        console.log('Player1: '  + player1 + ' puntos');
+                        console.log('Player2: '  + player2 + ' puntos');
+                        if(player1 == player2){
+                            console.log('Empate');
+                        }else if(player1 > player2){
+                            console.log('Ganador: Player 1');
+                        }else{
+                            console.log('Ganador: Player 2');
+                        }  
                     }
 
                 }, time * 200); // Pequeño tiempo para la sacudida
@@ -88,3 +130,16 @@ if(repeticion <= 6){
 //});
 }
 });
+
+function deshabilitarGiro(){
+    let giro =  document.getElementById('giro');
+    giro.disabled = true;
+    setTimeout(() => {
+     giro.disabled = false;
+    }, 1000);
+ }
+ 
+ 
+ document.getElementById('btnReinicio').addEventListener('click', function(){
+     location.reload();
+ });
