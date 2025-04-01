@@ -17,22 +17,31 @@
         <p>2. Se podrá girar los dados una sola vez por turno.</p>
         <p>3. El resultado de cada jugador se acumulará en la tabla de resultados y se sumarán al final de la partida.</p>
         <p>4. El jugador con mayor puntaje será el ganador.</p>
+        <h3>Ingrese los Nombres de los Jugadores</h3>
+        <form id="nameInputForm">
+            <label for="player1">Jugador 1:</label>
+            <input type="text" id="player1" placeholder="Nombre de Jugador 1" required>
+            <br>
+            <label for="player2">Jugador 2:</label>
+            <input type="text" id="player2" placeholder="Nombre de Jugador 2" required>
+            <br>
+            <button type="submit">Guardar</button>
+        </form>
         <!-- Botón para cerrar el modal -->
-        <label for="modalToggle" class="close-btn">¡Entendido!</label>
+        <label for="modalToggle" class="close-btn" type="submit">Comenzar</label>
     </div>
 </div>
+
     <div class="cabecera">
         <h1>Duelo de Dados</h1>
     </div>
     <div class="juego">
         <div class="jugador1">
-            <h2>Player 1</h2>
+            <h2 id="namePlayer1">Player 1</h2>
         </div>  
-      
-          
         <div class="jugador2">
-            <h2>Player 2</h2>
-        </div>       
+            <h2 id="namePlayer2">Player 2</h2>
+        </div>
     </div>
         <div class="container">
             <div class="columna">
@@ -150,20 +159,20 @@
             <div class="tablaR">
                 <table>
                     <tr>
-                        <th id="player1">Player 1</th>
-                        <th id="player2">Player 2</th>
+                        <th id="player-1">Player 1</th>
+                        <th id="player-2">Player 2</th>
                     </tr>
                     <tr>
-                        <td id="ronda1-p1">3</td>
-                        <td id="ronda1-p2">4</td>
+                        <td id="ronda1-p1">0</td>
+                        <td id="ronda1-p2">0</td>
                     </tr>
                     <tr>
-                        <td id="ronda2-p1">5</td>
-                        <td id="ronda2-p2">2</td>
+                        <td id="ronda2-p1">0</td>
+                        <td id="ronda2-p2">0</td>
                     </tr>
                     <tr>
-                        <td id="ronda3-p1">6</td>
-                        <td id="ronda3-p2">1</td>
+                        <td id="ronda3-p1">0</td>
+                        <td id="ronda3-p2">0</td>
                     </tr>
                 </table>
             </div>

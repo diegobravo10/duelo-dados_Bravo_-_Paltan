@@ -40,6 +40,8 @@ if(repeticion <= 6){
     console.log(turno);
     const time = 1.3;
 
+
+
 //cube.addEventListener('click', () => {
     cube.style.transition = '';
     cube.style.transform = `translateY(50px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
@@ -133,3 +135,19 @@ function deshabilitarGiro(){
  document.getElementById('btnReinicio').addEventListener('click', function(){
      location.reload();
  });
+
+ //Para cambiar el nombre a los jugadores
+ // Capturamos el formulario
+ document.getElementById('nameInputForm').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevenir el envío del formulario
+
+    // Obtenemos los valores de los nombres
+    var  player1Name = document.getElementById('player1').value;
+    var  player2Name = document.getElementById('player2').value;
+    console.log(player1Name);
+    console.log(player2Name);
+
+    // Actualizamos los nombres en la sección del juego
+    document.getElementById('namePlayer1').innerHTML = player1Name;
+    document.getElementById('namePlayer2').innerHTML = player2Name;
+});
