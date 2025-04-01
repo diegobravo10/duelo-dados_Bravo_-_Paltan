@@ -21,7 +21,7 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
-document.querySelector('.btn').addEventListener('click', () => {
+document.querySelector('.btn').addEventListener('click', function() {
     repeticion = 1 + repeticion;
     turno = 1- turno;
     let cube;
@@ -39,19 +39,6 @@ if(repeticion <= 6){
     }
     console.log(turno);
     const time = 1.3;
-
-    if(repeticion == 6){
-        console.log('Partida terminada');
-        console.log('Player1: '  + player1 + ' puntos');
-        console.log('Player2: '  + player2 + ' puntos');
-        if(player1 == player2){
-            console.log('Empate');
-        }else if(player1 > player2){
-            console.log('Ganador: Player 1');
-        }else{
-            console.log('Ganador: Player 2');
-        }  
-    }
 
 //cube.addEventListener('click', () => {
     cube.style.transition = '';
@@ -128,7 +115,10 @@ if(repeticion <= 6){
 
     }, time * 10); // Tiempo inicial de la caída
 //});
+}else{
+
 }
+
 });
 
 function deshabilitarGiro(){
