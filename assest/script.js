@@ -13,6 +13,15 @@ let td2p2 = document.getElementById('ronda2-p2');
 let td3p1 = document.getElementById('ronda3-p1');
 let td3p2 = document.getElementById('ronda3-p2');
 
+let totalp1 = document.getElementById('totalp1');
+let totalp2 = document.getElementById('totalp2');
+
+let player1Name = '';
+let player2Name = '';
+
+let turno1 = document.getElementById('turnop1');
+let turno2 = document.getElementById('turnop2')
+//Para los nombres de los jugadores
 
 document.addEventListener("keydown", function(event) {
     if (event.code === "Space") {
@@ -107,6 +116,16 @@ if(repeticion <= 6){
                         }else{
                             console.log('Ganador: Player 2');
                         }  
+                        totalp1.innerHTML= player1;
+                        totalp2.innerHTML = player2;
+                    }
+                    if(turno == 1){
+                        turno1.innerHTML = ''
+                        turno2.innerHTML = 'Tu Turno'
+                    }else{
+                        turno2.innerHTML = ''
+                        turno1.innerHTML = 'Tu Turno'
+
                     }
 
                 }, time * 200); // Pequeño tiempo para la sacudida
@@ -136,18 +155,20 @@ function deshabilitarGiro(){
      location.reload();
  });
 
- //Para cambiar el nombre a los jugadores
- // Capturamos el formulario
+ 
  document.getElementById('nameInputForm').addEventListener('submit', function(event) {
     event.preventDefault();  // Prevenir el envío del formulario
 
-    // Obtenemos los valores de los nombres
-    var  player1Name = document.getElementById('player1').value;
-    var  player2Name = document.getElementById('player2').value;
+     player1Name = document.getElementById('player1').value;
+     player2Name = document.getElementById('player2').value;
+    
     console.log(player1Name);
     console.log(player2Name);
 
-    // Actualizamos los nombres en la sección del juego
+    // Actualizar los nombres en la interfaz del juego
     document.getElementById('namePlayer1').innerHTML = player1Name;
     document.getElementById('namePlayer2').innerHTML = player2Name;
+
+    // Cerrar el modal ocultándolo
+    document.getElementById('gameModal').classList.add('hidden');
 });

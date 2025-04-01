@@ -64,44 +64,69 @@ body{
 /*Estilos para la tabla de resultados*/
 
 .resultados {
+    bottom: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative; 
     height: 300px; 
+
 }
 
 .tablaR table {
-    border-collapse: collapse;
-    width: 100%; 
-    text-align: center;
+  /*border-collapse: collapse;*/
+  width: 100%; 
+  text-align: center;
+  margin-top: -30px;
+  margin-left: -20px;
 }
 
 .tablaR th, .tablaR td {
-    border: 1px solid black;
-    padding: 10px;
+  /*border: 1px solid black;*/
+  padding: 10px;
+}
+
+.borde{
+background: rgb(236, 226, 206); 
+border-color: #646cff ;
+}
+
+#total-juego{
+background-color: #eb764f;
+font-family: fantasy;
 }
 
 #player1{
-    background-color: rgb(56, 56, 180);
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: rgb(56, 56, 180);
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #player2{
-    background-color: rgb(190, 44, 44);
-    color: rgb(227, 247, 253);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: rgb(190, 44, 44);
+  color: rgb(227, 247, 253);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #ronda1-p1, #ronda2-p1,#ronda3-p1{
-    background-color: rgb(81, 81, 228);
-    color: rgb(219, 244, 255);
-    font-family: fantasy;
+  background-color: rgb(81, 81, 228);
+  color: rgb(219, 244, 255);
+  font-family: fantasy;
 }
 
 #ronda1-p2, #ronda2-p2,#ronda3-p2{
-    background-color: rgb(248, 108, 108);
-    color: rgb(37, 22, 22);
-    font-family: fantasy;
+  background-color: rgb(248, 108, 108);
+  color: rgb(37, 22, 22);
+  font-family: fantasy;
+}
+
+#totalp1{
+background-color: rgb(39, 39, 217);
+color: rgb(219, 244, 255);
+font-family: fantasy;
+}
+#totalp2{
+background-color: rgb(237, 76, 76);
+color: rgb(37, 22, 22);
+font-family: fantasy;
 }
 
 /*Para el boton girar*/
@@ -120,6 +145,9 @@ body{
     }
   }
   
+  .btnGirar{
+    margin-top: -30px ;
+  }
   .btn {
     position: relative;
     width: 200px;  /* Ajusta el tamaño */
@@ -191,14 +219,18 @@ body{
 
 /* Botón de cerrar */
 .close-btn {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
     display: inline-block;
     margin-top: 10px;
+    width: 40%;
     padding: 10px;
     background: #646cff;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    border-color:  #646cff;;
 }
 
 .close-btn:hover {
@@ -431,4 +463,25 @@ body{
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
+.hidden {
+  display: none;
+}
+
+/*Diseño de los labels e inputs*/
+label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+/* Campos de entrada */
+input {
+  text-align: center;
+  width: 50%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
 

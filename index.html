@@ -10,14 +10,15 @@
     <input type="checkbox" id="modalToggle" class="modal-checkbox">
 
 <!-- Contenedor del modal -->
-<div class="modal">
+<div class="modal" id="gameModal">
     <div class="modal-content">
         <h2>Reglas del Juego</h2>
         <p>1. Los jugadores se turnarán para lanzar los dados.</p>
         <p>2. Se podrá girar los dados una sola vez por turno.</p>
         <p>3. El resultado de cada jugador se acumulará en la tabla de resultados y se sumarán al final de la partida.</p>
         <p>4. El jugador con mayor puntaje será el ganador.</p>
-        <h3>Ingrese los Nombres de los Jugadores</h3>
+
+        <h3 id="jugadores">¿Como se llaman?</h3>
         <form id="nameInputForm">
             <label for="player1">Jugador 1:</label>
             <input type="text" id="player1" placeholder="Nombre de Jugador 1" required>
@@ -25,10 +26,8 @@
             <label for="player2">Jugador 2:</label>
             <input type="text" id="player2" placeholder="Nombre de Jugador 2" required>
             <br>
-            <button type="submit">Guardar</button>
+            <button type="submit" id="modalToggle" class="close-btn">¡Comenzar!</button>
         </form>
-        <!-- Botón para cerrar el modal -->
-        <label for="modalToggle" class="close-btn" type="submit">Comenzar</label>
     </div>
 </div>
 
@@ -43,6 +42,15 @@
             <h2 id="namePlayer2">Player 2</h2>
         </div>
     </div>
+    <div class="juego">
+        <div class="turnos">
+            <h3 id="turnop1">Tu Turno</h3>
+        </div>  
+        <div class="turnos">
+            <h3 id="turnop2"></h3>
+        </div>
+    </div>
+
         <div class="container">
             <div class="columna">
                     <div class="cube1">
@@ -159,20 +167,30 @@
             <div class="tablaR">
                 <table>
                     <tr>
-                        <th id="player-1">Player 1</th>
-                        <th id="player-2">Player 2</th>
+                        <th class="borde"></th>
+                        <th id="player1">Player 1</th>
+                        <th id="player2">Player 2</th>
                     </tr>
                     <tr>
+                        <td class="borde"></td>
                         <td id="ronda1-p1">0</td>
                         <td id="ronda1-p2">0</td>
                     </tr>
                     <tr>
+                        <td class="borde"></td>
                         <td id="ronda2-p1">0</td>
                         <td id="ronda2-p2">0</td>
                     </tr>
                     <tr>
+                        <td class="borde"></td>
                         <td id="ronda3-p1">0</td>
                         <td id="ronda3-p2">0</td>
+                    </tr>
+                    <tr>
+                        <td id="total-juego">Total</td>
+                        <td id="totalp1">0</td>
+                        <td id="totalp2">0</td>
+
                     </tr>
                 </table>
             </div>
