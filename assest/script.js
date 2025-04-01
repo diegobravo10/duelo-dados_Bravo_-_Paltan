@@ -3,6 +3,8 @@ let turno =0;
 let repeticion = 0;
 let player1 = 0;
 let player2 = 0;
+
+
 document.querySelector('.btn').addEventListener('click', () => {
     repeticion = 1 + repeticion;
     turno = 1- turno;

@@ -1,9 +1,24 @@
 
+body{
+    background: rgb(236, 226, 206); ;
+}
+
 .cabecera{
     text-align-last: center;
 }
 .cabecera h1{
     font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 10px;
+    width: 40%; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-color: rgb(64, 168, 104);
+    margin-top: 10px;
+    margin-left: auto; 
+    margin-right: auto; 
+    border-radius: 15px;
 }
 .juego{
     display: flex;
