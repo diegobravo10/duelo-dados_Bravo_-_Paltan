@@ -213,14 +213,12 @@ body{
     padding: 14px 28px; 
     cursor: pointer; 
     border-radius: 5px;
-    background-color: white; 
-    border: 2px solid #c96842;
+    background-color: rgb(56, 56, 180); 
 }
 
 .reinicio:hover{
-    background-color: #c96842;
+    background-color: rgb(190, 44, 44);
     color: white;
-
 }
 
 /*Estilo para los dados*/
