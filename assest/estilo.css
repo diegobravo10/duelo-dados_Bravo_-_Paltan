@@ -485,3 +485,30 @@ input {
   font-size: 16px;
 }
 
+/* Estilo para el mensaje de turnos*/
+.turnos h3 {
+  font-size: 24px; /* Tamaño de letra grande */
+  font-weight: bold; /* Texto en negrita */
+  color: #ffffff; /* Texto blanco */
+  text-transform: uppercase; /* Convertir texto a mayúsculas */
+  background: linear-gradient(45deg, #ff5733, #ffbd33); /* Degradado llamativo */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+  text-align: center; /* Centrar texto */
+  display: inline-block; /* Ajustar el tamaño al texto */
+  animation: parpadeo 1s infinite alternate; /* Animación de parpadeo */
+}
+
+/* Animación de parpadeo */
+@keyframes parpadeo {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.5; transform: scale(1.1); }
+}
+#turnop1 {
+  margin-left: -50px; /* Mueve más a la izquierda */
+}
+
+#turnop2 {
+  margin-right: -70px; /* Mueve más a la derecha */
+}
