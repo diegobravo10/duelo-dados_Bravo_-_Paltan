@@ -14,7 +14,8 @@ body{
     display: flex;
     justify-content: center; 
     align-items: center;
-    background-color: rgb(64, 168, 104);
+    background-color: #000000;
+    color: white;
     margin-top: 10px;
     margin-left: auto; 
     margin-right: auto; 
@@ -31,19 +32,20 @@ body{
     text-align: center;
     border: 1px solid black; 
     border-radius: 10px;
+    margin-top: -15px;
 }
 .jugador1{
     background-color: rgb(56, 56, 180);
     align-items: center;
     color:white;
     font-family: fantasy;
-    font-size: 25px;
+    font-size: 20px;
 }
 .jugador2{
     background-color: rgb(190, 44, 44);
     color:white;
     font-family: fantasy;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 /* Para cmabiar el nombre de los jugadores*/
@@ -237,7 +239,7 @@ font-family: fantasy;
     background: #535bf2;
 }
 
-/* Ocultar el modal cuando el checkbox está marcado */
+
 .modal-checkbox:checked + .modal {
     opacity: 0;
     visibility: hidden;
@@ -280,7 +282,7 @@ font-family: fantasy;
 .columna {
   width: 200px;
   height: 200px;
-  margin: 0 auto;
+  margin: -15px;
   position: relative;
   perspective: 600px;
   top: -150px;
@@ -570,6 +572,8 @@ input {
 #ganador{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color:rgb(0, 0, 0);
+  font-size: 20px;
+
 
 }
 #btnCierre, #btnContinuar{
@@ -590,9 +594,10 @@ input {
   color: white;
 
 }
-.botonesCierre{
-
-    display: flex;
-    gap: 20px; /* Espaciado entre los elementos */
-
+.botonesCierre {
+  text-align: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center; 
+  align-items: center; 
 }

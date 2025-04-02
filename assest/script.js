@@ -123,24 +123,24 @@ if(repeticion <= 6){
 
                         let comen = document.getElementById('ganador');
                         if(player1 == player2){
-                            res.innerHTML = 'Empate';
-                            comen.innerHTML= 'Fue una partida reñida'
+                            res.innerHTML = '¡Empate!';
+                            comen.innerHTML= '¡Empate! La suerte está bien repartida esta vez 🍀😮'
                         }else if(player1 > player2){
-                            res.innerHTML = 'Victoria';
-                            comen.innerHTML = player1Name + ' quedaste campeon con ' + player1 + ' puntos.'
+                            res.innerHTML = '¡Victoria!';
+                            comen.innerHTML = '¡Enhorabuena, ' + player1Name + '! ¡Has ganado con ' + player1 + ' puntos!'
                         }else{
-                            res.innerHTML = 'Victoria';
-                            comen.innerHTML = player2Name + ' quedaste campeon con ' + player2 + ' puntos.'
+                            res.innerHTML = '¡Victoria!';
+                            comen.innerHTML = '¡Enhorabuena, ' + player1Name + '! ¡Has ganado con ' + player2 + ' puntos!'
                         }  
 
                         abrirModal();
 
                     }
                     if(turno == 1){
-                        turno1.innerHTML = ' '
+                        turno1.innerHTML = '...'
                         turno2.innerHTML = 'Tu Turno'
                     }else{
-                        turno2.innerHTML = ' '
+                        turno2.innerHTML = '...'
                         if(repeticion != 6){
                             turno1.innerHTML = 'Tu Turno'
                         }
