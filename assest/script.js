@@ -46,12 +46,9 @@ if(repeticion <= 6){
         cube = document.querySelector('.cube2');
         player2 = randomValue + player2;
     }
-    console.log(turno);
-    const time = 1.3;
 
 
-
-//cube.addEventListener('click', () => {
+    const time = 1.6;
     cube.style.transition = '';
     cube.style.transform = `translateY(50px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
 
@@ -59,19 +56,16 @@ if(repeticion <= 6){
         cube.style.transition = `transform ${time}s cubic-bezier(0.3, 1.5, 0.5, 1)`;
         cube.style.transform = `translateY(180px) rotateX(720deg) rotateY(720deg) rotateZ(720deg)`;
 
-        // 🔹 2. Rebote grande
         setTimeout(() => {
             cube.style.transform = `translateY(180px) rotateX(1080deg) rotateY(1080deg) rotateZ(1080deg)`;
 
-            // 🔹 3. Rebote más pequeño
+            //  Rebote más pequeño
             setTimeout(() => {
                 cube.style.transform = `translateY(10px) rotateX(1440deg) rotateY(1440deg) rotateZ(1440deg)`;
 
-                // 🔹 4. Sacudida y cara final
+                // Sacudida y cara final
                 setTimeout(() => {
                     cube.style.transition = `transform ${time / 3}s`;
-
-                   // console.log(`randomValue: ${randomValue}`);
 
                     switch (randomValue) {
                         case 1:
@@ -153,14 +147,12 @@ if(repeticion <= 6){
 
                 }, time * 200); // Pequeño tiempo para la sacudida
 
-            }, time * 200); // Segundo rebote
+            }, time * 200); // Rebote
 
-        }, time * 200); // Primer rebote
+        }, time * 200); 
 
     }, time * 10); // Tiempo inicial de la caída
 //});
-}else{
-
 }
 
 });
@@ -170,7 +162,7 @@ function deshabilitarGiro(){
     giro.disabled = true;
     setTimeout(() => {
      giro.disabled = false;
-    }, 1300);
+    }, 1600);
  }
 
  function dhabilitarGiro(){
@@ -265,8 +257,6 @@ function guardarPartida(jugador1, puntaje1, jugador2, puntaje2) {
 
     // Guardar el array actualizado en localStorage
     localStorage.setItem("partidas", JSON.stringify(partidas));
-
-    console.log("Partida guardada correctamente");
 }
 
 function cargarEnTabla() {
@@ -289,6 +279,7 @@ function cargarEnTabla() {
         tabla.innerHTML += fila;
     });
 }
+
 
 window.onload = function() {
     cargarEnTabla();
