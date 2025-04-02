@@ -118,6 +118,23 @@ if(repeticion <= 6){
                         }  
                         totalp1.innerHTML= player1;
                         totalp2.innerHTML = player2;
+
+                        let res = document.getElementById('res');
+
+                        let comen = document.getElementById('ganador');
+                        if(player1 == player2){
+                            res.innerHTML = 'Empate';
+                            comen.innerHTML= 'Fue una partida reñida'
+                        }else if(player1 > player2){
+                            res.innerHTML = 'Victoria';
+                            comen.innerHTML = player1Name + ' quedaste campeon con ' + player1 + ' puntos.'
+                        }else{
+                            res.innerHTML = 'Victoria';
+                            comen.innerHTML = player2Name + ' quedaste campeon con ' + player2 + ' puntos.'
+                        }  
+
+                        abrirModal();
+
                     }
                     if(turno == 1){
                         turno1.innerHTML = ' '
@@ -127,7 +144,8 @@ if(repeticion <= 6){
                         if(repeticion != 6){
                             turno1.innerHTML = 'Tu Turno'
                         }
-                        
+                       
+                    
 
                     }
 
@@ -171,7 +189,48 @@ function deshabilitarGiro(){
     // Actualizar los nombres en la interfaz del juego
     document.getElementById('namePlayer1').innerHTML = player1Name;
     document.getElementById('namePlayer2').innerHTML = player2Name;
+    document.getElementById('player11').innerHTML = player1Name;
+    document.getElementById('player22').innerHTML = player2Name;
+
+
 
     // Cerrar el modal ocultándolo
     document.getElementById('gameModal').classList.add('hidden');
+});
+
+function abrirModal() {
+    let overlay = document.getElementById("modal-overlay");
+    if (overlay) { 
+        overlay.classList.remove("hidden"); // Muestra el modal correctamente
+    }
+}
+
+function cerrarModal() {
+    let overlay = document.getElementById("modal-overlay");
+    if (overlay) {
+        overlay.classList.add("hidden"); // Oculta el modal
+    }
+}
+
+document.getElementById('btnCierre').addEventListener('click', function(){
+    cerrarModal();
+    location.reload(); 
+});
+
+
+document.getElementById('btnContinuar').addEventListener('click', function(){
+     turno =0;
+     repeticion = 0;
+     player1 = 0;
+     player2 = 0;
+
+    td1p1.innerHTML= 0;
+    td1p2.innerHTML= 0;
+    td2p1.innerHTML= 0;
+    td2p2.innerHTML= 0;
+    td3p1.innerHTML= 0;
+    td3p2.innerHTML= 0;
+    totalp1.innerHTML = 0;
+    totalp2.innerHTML = 0;
+    cerrarModal();
 });
