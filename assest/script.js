@@ -100,21 +100,10 @@ if(repeticion <= 6){
                         td3p1.innerHTML= randomValue;
                     }else{
                         td3p2.innerHTML= randomValue;
-                        console.log('Partida terminada');
-                        console.log('Player1: '  + player1 + ' puntos');
-                        console.log('Player2: '  + player2 + ' puntos');
-                        if(player1 == player2){
-                            console.log('Empate');
-                        }else if(player1 > player2){
-                            console.log('Ganador: Player 1');
-                        }else{
-                            console.log('Ganador: Player 2');
-                        }  
                         totalp1.innerHTML= player1;
                         totalp2.innerHTML = player2;
 
                         let res = document.getElementById('res');
-
                         let comen = document.getElementById('ganador');
                         if(player1 == player2){
                             res.innerHTML = '¡Empate!';
@@ -126,7 +115,7 @@ if(repeticion <= 6){
                             res.innerHTML = '¡Victoria!';
                             comen.innerHTML = '¡Enhorabuena, ' + player2Name + '! ¡Has ganado con ' + player2 + ' puntos!'
                         }  
-
+                        //Metodos a ejecutar el finalizar partida.
                         abrirModal();
                         guardarPartida(player1Name,player1,player2Name,player2);
                         cargarEnTabla();
@@ -157,7 +146,7 @@ if(repeticion <= 6){
 
 });
 
-function deshabilitarGiro(){
+function deshabilitarGiro(){  //Boton deshabilitado mientras gira el dado
     let giro =  document.getElementById('giro');
     giro.disabled = true;
     setTimeout(() => {
@@ -165,17 +154,18 @@ function deshabilitarGiro(){
     }, 1600);
  }
 
- function dhabilitarGiro(){
+ function dhabilitarGiro(){ //Boton deshabilitado antes de ingresar nombres 
     let giro =  document.getElementById('giro');
     giro.disabled = true;
  }
 
- function habilitarGiro(){
+ function habilitarGiro(){ //Boton habilitado
     let giro =  document.getElementById('giro');
     giro.disabled = false;
  }
  
  
+ //Boton de reinicio de pagina
  document.getElementById('btnReinicio').addEventListener('click', function(){
      location.reload();
  });
@@ -187,8 +177,6 @@ function deshabilitarGiro(){
      player1Name = document.getElementById('player1').value;
      player2Name = document.getElementById('player2').value;
     
-    console.log(player1Name);
-    console.log(player2Name);
 
     // Actualizar los nombres en la interfaz del juego
     document.getElementById('namePlayer1').innerHTML = player1Name;
@@ -264,10 +252,10 @@ function cargarEnTabla() {
 
     let tabla = document.getElementById("tablaPartida");
 
-    // Limpiar la tabla antes de agregar nuevas filas
+    // Limpia la tabla antes de agregar nuevas filas
     tabla.innerHTML = "";
 
-    // Recorrer cada partida y agregar una fila a la tabla
+    // Recorre cada partida  o elemento y agregar una fila a la tabla
     partidas.forEach((partida) => {
         let fila = `<tr>
                         <td>${partida.fecha}</td>
@@ -276,7 +264,7 @@ function cargarEnTabla() {
                         <td>${partida.jugador2}</td>
                         <td>${partida.puntaje2}</td>
                     </tr>`;
-        tabla.innerHTML += fila;
+        tabla.innerHTML += fila; //Permite concatenar o agregar fila de informacion a la tabla 
     });
 }
 
