@@ -130,10 +130,12 @@ if(repeticion <= 6){
                             comen.innerHTML = '¡Enhorabuena, ' + player1Name + '! ¡Has ganado con ' + player1 + ' puntos!'
                         }else{
                             res.innerHTML = '¡Victoria!';
-                            comen.innerHTML = '¡Enhorabuena, ' + player1Name + '! ¡Has ganado con ' + player2 + ' puntos!'
+                            comen.innerHTML = '¡Enhorabuena, ' + player2Name + '! ¡Has ganado con ' + player2 + ' puntos!'
                         }  
 
                         abrirModal();
+                        guardarPartida(player1Name,player1,player2Name,player2);
+                        cargarEnTabla();
 
                     }
                     if(turno == 1){
@@ -170,6 +172,16 @@ function deshabilitarGiro(){
      giro.disabled = false;
     }, 1300);
  }
+
+ function dhabilitarGiro(){
+    let giro =  document.getElementById('giro');
+    giro.disabled = true;
+ }
+
+ function habilitarGiro(){
+    let giro =  document.getElementById('giro');
+    giro.disabled = false;
+ }
  
  
  document.getElementById('btnReinicio').addEventListener('click', function(){
@@ -193,9 +205,8 @@ function deshabilitarGiro(){
     document.getElementById('player22').innerHTML = player2Name;
 
 
-
-    // Cerrar el modal ocultándolo
     document.getElementById('gameModal').classList.add('hidden');
+    habilitarGiro();
 });
 
 function abrirModal() {
@@ -234,3 +245,52 @@ document.getElementById('btnContinuar').addEventListener('click', function(){
     totalp2.innerHTML = 0;
     cerrarModal();
 });
+
+//Para guardar de localStorage
+function guardarPartida(jugador1, puntaje1, jugador2, puntaje2) {
+    let nuevaPartida = {
+        fecha: new Date().toLocaleString(),
+        jugador1: jugador1,
+        puntaje1: puntaje1,
+        jugador2: jugador2,
+        puntaje2: puntaje2
+        
+    };
+
+    // Obtener las partidas almacenadas o inicializar un array vacío
+    let partidas = JSON.parse(localStorage.getItem("partidas")) || [];
+
+    // Agregar la nueva partida al array
+    partidas.push(nuevaPartida);
+
+    // Guardar el array actualizado en localStorage
+    localStorage.setItem("partidas", JSON.stringify(partidas));
+
+    console.log("Partida guardada correctamente");
+}
+
+function cargarEnTabla() {
+    let partidas = JSON.parse(localStorage.getItem("partidas")) || [];
+
+    let tabla = document.getElementById("tablaPartida");
+
+    // Limpiar la tabla antes de agregar nuevas filas
+    tabla.innerHTML = "";
+
+    // Recorrer cada partida y agregar una fila a la tabla
+    partidas.forEach((partida) => {
+        let fila = `<tr>
+                        <td>${partida.fecha}</td>
+                        <td>${partida.jugador1}</td>
+                        <td>${partida.puntaje1}</td>
+                        <td>${partida.jugador2}</td>
+                        <td>${partida.puntaje2}</td>
+                    </tr>`;
+        tabla.innerHTML += fila;
+    });
+}
+
+window.onload = function() {
+    cargarEnTabla();
+    dhabilitarGiro();
+};

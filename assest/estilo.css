@@ -601,3 +601,41 @@ input {
   justify-content: center; 
   align-items: center; 
 }
+
+/*Historial*/
+#tb_historial {
+  width: 60%;
+  margin: auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; 
+  overflow: hidden; 
+
+}
+
+
+#tb_historial th {
+  background: #d8ad51;
+  color: white;
+  padding: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+}
+
+
+#tb_historial th.historial {
+  background: #9c6c35;
+  font-size: 1.5em;
+  padding: 15px;
+  
+}
+
+#tb_historial td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #777777;
+}
+
+
