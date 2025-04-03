@@ -455,13 +455,13 @@ font-family: fantasy;
 }
 
 .base {
-  width: 300px; /* Ajusta el tamaño según el dado */
-  height: 30px; /* Grosor de la base */
+  width: 300px; 
+  height: 30px; 
   background-color: #444;
   position: absolute;
   left: 50%;
   transform: translateY(240px) translateX(-50%);
-  border-radius: 10px; /* Bordes redondeados para un mejor efecto */
+  border-radius: 10px; 
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -500,15 +500,15 @@ input {
 
 /* Estilo para el mensaje de turnos*/
 .turnos h3 {
-  font-size: 24px; /* Tamaño de letra grande */
-  font-weight: bold; /* Texto en negrita */
-  color: #ffffff; /* Texto blanco */
+  font-size: 24px; 
+  font-weight: bold; 
+  color: #ffffff; 
   text-transform: uppercase; /* Convertir texto a mayúsculas */
-  background: linear-gradient(45deg, #ff5733, #ffbd33); /* Degradado llamativo */
-  padding: 10px 20px; /* Espaciado interno */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
-  text-align: center; /* Centrar texto */
+  background: linear-gradient(45deg, #ff5733, #ffbd33); 
+  padding: 10px 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center; 
   display: inline-block; /* Ajustar el tamaño al texto */
   animation: parpadeo 1s infinite alternate; /* Animación de parpadeo */
 }
